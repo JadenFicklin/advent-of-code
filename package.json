@@ -1,0 +1,19 @@
+{
+  "name": "typescript-playergounrd",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.ts",
+  "main": "public/index.js",
+  "scripts": {
+    "dev": "parcel watch",
+    "start": "nodemon public/index.js",
+    "build": "rm ./public/* && parcel build --dist-dir ./public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "parcel": "^2.8.3"
+  }
+}
