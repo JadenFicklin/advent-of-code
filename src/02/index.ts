@@ -2522,17 +2522,20 @@ const combos = {
   "C Z": "draw",
 };
 
-const getScoreOfOneGame = (sample) => {
-  const gameResult = combos[sample];
-  const resultPoints = conversions[gameResult];
-  const playPoint = conversions[sample[2]];
+// solution 1
+// const getScoreOfOneGame = (sample) => {
+//   const gameResult = combos[sample];
+//   const resultPoints = conversions[gameResult];
+//   const playPoint = conversions[sample[2]];
 
-  return resultPoints + playPoint;
-};
+//   return resultPoints + playPoint;
+// };
 
-//organize string into an array of strings
-const groups = puzzleInput.split("\n\n")[0].split("\n");
+// //organize string into an array of strings
+// const groups = puzzleInput.split("\n\n")[0].split("\n");
 
-//map through all data, use function for each item to add up the score, add all numbers within the array
-const totalResult = groups.map(getScoreOfOneGame).reduce((a, c) => a + c);
-console.log(totalResult);
+// //map through all data, use function for each item to add up the score, add all numbers within the array
+// const totalResult = groups.map(getScoreOfOneGame).reduce((a, c) => a + c);
+// console.log(totalResult);
+
+//solution 2
