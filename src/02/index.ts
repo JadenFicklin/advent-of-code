@@ -2499,43 +2499,33 @@ A X
 A X
 A X`;
 
-const conversions = {
-  X: 1,
-  Y: 2,
-  Z: 3,
-  loss: 0,
-  draw: 3,
-  win: 6,
-};
-
+// score rules
 const combos = {
-  "A X": "draw",
-  "B X": "loss",
-  "C X": "win",
+  "B X": 1,
+  "C X": 2,
+  "A X": 3,
 
-  "A Y": "win",
-  "B Y": "draw",
-  "C Y": "loss",
+  "A Y": 4,
+  "B Y": 5,
+  "C Y": 6,
 
-  "A Z": "loss",
-  "B Z": "win",
-  "C Z": "draw",
+  "C Z": 7,
+  "A Z": 8,
+  "B Z": 9,
 };
 
-// solution 1
-// const getScoreOfOneGame = (sample) => {
-//   const gameResult = combos[sample];
-//   const resultPoints = conversions[gameResult];
-//   const playPoint = conversions[sample[2]];
+// return the score based on the game combo
+const getTheScore = (game) => {
+  return combos[game];
+};
 
-//   return resultPoints + playPoint;
-// };
+// turn string into array of strings ['C X', 'A Y', 'A X']
+const groups = puzzleInput.split("\n\n")[0].split("\n");
 
-// //organize string into an array of strings
-// const groups = puzzleInput.split("\n\n")[0].split("\n");
+// map each group
+// make a list of all game scores
+// add them
+const puzzleSum = groups.map(getTheScore).reduce((a, c) => a + c);
 
-// //map through all data, use function for each item to add up the score, add all numbers within the array
-// const totalResult = groups.map(getScoreOfOneGame).reduce((a, c) => a + c);
-// console.log(totalResult);
-
-//solution 2
+//get the total score
+console.log(puzzleSum);
